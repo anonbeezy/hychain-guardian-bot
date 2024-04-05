@@ -29,5 +29,9 @@ bot.onText(/\/debug_message/, (msg) => {
 new GuardianSession(
   new Tail(process.env.GUARDIAN_LOG_PATH),
   new TelegramFormatter(),
-  new TelegramNotifier(bot, process.env.GUARDIAN_CHAT_ID)
+  new TelegramNotifier(
+    bot,
+    process.env.GROUP_CHAT_ID,
+    parseInt(process.env.GUARDIAN_TOPIC_ID)
+  )
 ).start()
