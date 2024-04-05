@@ -11,6 +11,7 @@ export class GuardianSession {
     private notifier: TelegramNotifier
   ) {}
   start() {
+    this.notifier.notify('🟢 Watching Guardian logs')
     this.tail.on('line', async (data) => {
       await this.processLog(data)
     })
