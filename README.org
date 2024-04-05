@@ -1,0 +1,33 @@
+* HYCHAIN Guardian Watcher
+
+This application reads from HYCHAIN Guardian Node logs and sends status updates to Telegram
+
+** Setup
+
+Run your Guardian so that it outputs logs, for example:
+
+#+begin_src shell
+./guardian-cli-linux guardian run --loop-interval-ms 3600000 <private_key> >> guardian.log
+#+end_src
+
+Create a ~.env~ file with the following information
+
+#+begin_src dotenv
+TELEGRAM_BOT_TOKEN=
+CHAT_ID=
+GUARDIAN_LOG_PATH=
+#+end_src
+
+Install dependencies
+
+#+begin_src shell
+npm install
+#+end_src
+
+** Running the bot
+
+Run the bot using the command:
+
+#+begin_src shell
+npm start
+#+end_src
