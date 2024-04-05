@@ -4,7 +4,7 @@ import { GuardianExecution } from './GuardianExecution'
 export class TelegramFormatter implements Formatter {
   format(execution: GuardianExecution) {
     const statusEmoji = execution.submittedAssertions > 0 ? '🎉' : '💔'
-    return `${statusEmoji} Submitted ${execution.submittedAssertions} /${
+    return `${statusEmoji} Submitted ${execution.submittedAssertions}/${
       execution.totalAssertions
     } assertions
 
