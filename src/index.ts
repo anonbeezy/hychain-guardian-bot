@@ -54,7 +54,7 @@ bot.onText(/\/debug_message/, (msg) => {
 })
 
 new GuardianSession(
-  new Tail(process.env.GUARDIAN_LOG_PATH),
+  new Tail(process.env.GUARDIAN_LOG_PATH, { fromBeginning: true }),
   new TelegramFormatter(),
   new TelegramNotifier(
     bot,
