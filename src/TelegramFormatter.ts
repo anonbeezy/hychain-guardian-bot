@@ -12,9 +12,9 @@ export class TelegramFormatter extends Formatter {
       execution.totalAssertions
     } assertions
 
-Submitted ${totalSumSubmittedAssertions} in the last day (${
+Submitted ${totalSumSubmittedAssertions} in the last day \\(\`${
       Math.round((totalSumSubmittedAssertions / 24) * 100) / 100
-    } per hour)
+    }\` per hour\\)
 
 Started at \`${execution.startTime.toISOString()}\`
 Finished at \`${execution.endTime.toISOString()}\`
