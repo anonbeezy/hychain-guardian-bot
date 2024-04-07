@@ -1,5 +1,5 @@
-import { GuardianExecution } from './GuardianExecution'
+import { ExecutionWindow } from './ExecutionWindow'
 
 export abstract class Formatter {
-  abstract format(execution: GuardianExecution): string
+  abstract format(executions: ExecutionWindow): string
 }
