@@ -87,7 +87,6 @@ abstract class TextHandler {
 
 class StartHandler extends TextHandler {
   async handle(bot: TelegramBot, msg: TelegramBot.Message) {
-    console.log(arguments)
     const chatId = msg.chat.id
     const options = {
       reply_markup: {
