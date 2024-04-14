@@ -54,7 +54,16 @@ try {
   process.exit(1)
 }
 
-const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: true })
+const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
+  polling: true,
+  request: {
+    agentOptions: {
+      keepAlive: true,
+      family: 4,
+    },
+    url: '',
+  },
+})
 bot.onText(/\/debug_message/, (msg) => {
   if (msg.is_topic_message) {
     bot.sendMessage(msg.chat.id, JSON.stringify(msg, null, 2), {
